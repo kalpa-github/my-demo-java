@@ -5,7 +5,7 @@ WORKDIR /tmp/
 RUN mvn package
 
 FROM openjdk:8-jre-alpine
-EXPOSE 7000
+EXPOSE 8000
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/javalin-rest-1.0.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
